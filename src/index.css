@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.hover-effect:hover{
+  cursor: pointer;
+}
+
+.cus-image{
+  max-height: 250px;
+}
