@@ -1,13 +1,13 @@
 import React from "react";
 import "./Movie.css";
 import unavailable from "../../assets/unavailable-image.jpg";
-
 import { useNavigate } from "react-router-dom";
 
-export default function ({ key, title, poster, releaseDate, votes, id }) {
+export default function ({ key, title, poster, releaseDate, votes, id, name }) {
   const navigate = useNavigate();
-  const redirectToDetailsPage = (id) => {
-    navigate("/movieDetails");
+
+  const handleCardClick = (id) => {
+    navigate(`/detailsPage/${id}`);
   };
 
   return (
@@ -15,7 +15,7 @@ export default function ({ key, title, poster, releaseDate, votes, id }) {
       <div
         className="card bg-dark shadow-sm"
         data-bs-theme="dark"
-        onClick={() => redirectToDetailsPage(id)}
+        onClick={() => handleCardClick(id)}
       >
         {poster != null ? (
           <img
@@ -34,7 +34,12 @@ export default function ({ key, title, poster, releaseDate, votes, id }) {
         <rect width="100%" height="100%" fill="#55595c" />
 
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          {title ? (
+            <h5 className="card-title">{title}</h5>
+          ) : (
+            <h5 className="card-title">{name}</h5>
+          )}
+
           <div className="d-flex justify-content-between align-items-center">
             {/* <div className="btn-group">
               <button type="button" className="btn btn-sm btn-outline-danger">

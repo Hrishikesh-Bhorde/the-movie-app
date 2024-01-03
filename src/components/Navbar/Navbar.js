@@ -5,10 +5,10 @@ import Logo from "../../assets/MSA-logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-secondary" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg bg-black" data-bs-theme="dark">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="Logo" height="40px" width="100px" />
+          <img src={Logo} alt="Logo" height="30px" width="80px" />
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width={16}
@@ -78,7 +78,9 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link hover-effect">Popular</a>
+              <Link to="/search" className="nav-link hover-effect">
+                Trending
+              </Link>
             </li>
           </ul>
           {/* <form className="d-flex" role="search">
